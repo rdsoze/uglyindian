@@ -36,6 +36,8 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shoulda-matchers', require: false
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

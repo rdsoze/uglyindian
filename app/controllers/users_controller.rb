@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout 'fluid'
+  layout 'mmenu'
   before_filter :user_signed_in?
 
   def index
