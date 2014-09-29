@@ -2,4 +2,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.multilevelpushmenu.min
+//= require markerclusterer
 //= require turbolinks
