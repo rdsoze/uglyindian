@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: ui_prod
-  username: ops
-  password: <%= ENV['UGLYINDIAN_DATABASE_PASSWORD'] %>
+  database: <%= ENV['UI_DB'] %>
+  username: <%= ENV['UI_DB_USER'] %>
+  password: <%= ENV['UI_DB_PASSWORD'] %>
