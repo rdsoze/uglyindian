@@ -4,8 +4,8 @@ class CreateSpotfixes < ActiveRecord::Migration
       t.integer :user_id #leader of the spotfix
       t.text :description
       t.datetime :fix_date
-      t.string :location_1
-      t.string :location_2
+      t.string :location
+      t.string :city
       t.float :latitude
       t.float :longitude
       t.boolean :active #not sure how to use

@@ -29,7 +29,7 @@
 	color: #000;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 2em;
-	z-index: -3;
+	z-index: 0;
 	width: 80%;
 	min-height: 80%;
 }

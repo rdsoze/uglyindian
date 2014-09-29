@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20140928081033) do
     t.integer  "user_id"
     t.text     "description"
     t.datetime "fix_date"
-    t.string   "location_1"
-    t.string   "location_2"
+    t.string   "location"
+    t.string   "city"
     t.float    "latitude",    limit: 24
     t.float    "longitude",   limit: 24
     t.boolean  "active"
