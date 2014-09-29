@@ -1,7 +1,7 @@
 class SpotfixesController < ApplicationController
-  layout 'fluid'
-  before_filter :user_signed_in?
-  before_filter :fetch_location
+  layout 'home'
+  # before_filter :user_signed_in?
+  # before_filter :fetch_location
 
   def index
     @spotfixes = Spotfix.all

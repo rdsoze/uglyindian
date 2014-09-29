@@ -1,0 +1,40 @@
+/*
+ *= require bootstrap_and_overrides
+ *= require jquery.multilevelpushmenu
+ *= require_self
+*/
+
+
+/*#pushobj {
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	color: #000;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 2em;
+	z-index: 1;
+}*/
+
+.row {
+  text-align: center;
+}
+
+
+#pushobj {
+	position: absolute;
+	top: 0px;
+	left: 5%;
+	right: 5%;
+	text-align: center;
+	color: #000;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 2em;
+	z-index: -3;
+	width: 80%;
+	min-height: 80%;
+}
+/*
+#pushobj img {
+	max-width: 100%;
+	max-height: 100%;
+}*/
