@@ -17,7 +17,7 @@ set :ssh_options, {
 # set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 
 # set :rvm_type, :auto                     # Defaults to: :auto
-set :rvm_ruby_version, '2.1.3p242@ui'      # Defaults to: 'default'
+set :rvm_ruby_version, '2.1.3@ui'      # Defaults to: 'default'
 
 set :format, :pretty
 set :log_level, :debug
@@ -27,7 +27,7 @@ set :pty, true
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/root/uglyindian'
+set :deploy_to, '/home/ops/uglyindian'
 
 # Default value for :scm is :git
 # set :scm, :git
