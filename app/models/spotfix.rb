@@ -1,6 +1,7 @@
 class Spotfix < ActiveRecord::Base
 
   belongs_to :leader, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :city
   has_many :needs
   has_many :attendees
   has_many :users, through: :attendees
@@ -12,6 +13,8 @@ class Spotfix < ActiveRecord::Base
   scope :upcoming, -> { where("fix_date >= ?", DateTime.now() + 4.hours ) }
   scope :completed, -> { where("fix_date <= ?", DateTime.now() + 4.hours ) }
 
+  reverse_geocoded_by :latitude, :longitude, :address => :location
+  before_create :reverse_geocode
 
   def deactivate
     self.update({ active: false })

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe Spotfix do
   it { should belong_to(:leader) }
+  it { should belong_to(:city) }
   it { should have_many(:needs) }
   it { should have_many(:attendees) }
   it { should have_many(:users).through(:attendees) }

@@ -36,20 +36,20 @@
         <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
         <%= javascript_include_tag "home" %>
-        <script>
-            $(document).ready(function(){
-                // HTML markup implementation, overlap mode
-                $( '#menu' ).multilevelpushmenu({
-                    menuWidth: '20%', // '450px', '30em', '25%' will also work
-                    menuHeight: '100%'
-                });
-            });
-        </script>   
+        // <script>
+        //     $(document).ready(function(){
+        //         // HTML markup implementation, overlap mode
+        //         $( '#menu' ).multilevelpushmenu({
+        //             menuWidth: '20%', // '450px', '30em', '25%' will also work
+        //             menuHeight: '100%'
+        //         });
+        //     });
+        // </script>   
         <%= yield :head %>
     </head>
      <body>
     <%= yield %>
-    <div id="menu">
+<!--     <div id="menu">
       <nav>
         <h2><i class="fa fa-reorder"></i>Menu</h2>
         <ul>
@@ -67,7 +67,7 @@
             </li>
         </ul>
       </nav>
-    </div>
+    </div> -->
         <%= yield :footer %>
     </body>
 </html>

@@ -1,3 +1,66 @@
-<div id="pushobj">
-    <%= image_tag 'intro.png', size: '250x100' %>
+<% content_for :head do %>
+    <style type="text/css">
+    html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var city = <%= raw @city.to_json %>;
+        var mapOptions = {
+          center: { lat: city.latitude, lng: city.longitude },
+          zoom: 12
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+
+        var geocoder = new google.maps.Geocoder();
+        google.maps.event.addDomListener(document.getElementById("map-func-1"), "click", function() {
+          geocoder.geocode({ address: document.getElementById("map-search").value }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              var result = results[0];
+              document.getElementById("map-search").value = result.formatted_address;
+              if (result.geometry.viewport) {
+                map.fitBounds(result.geometry.viewport);
+              } else {
+                map.setCenter(result.geometry.location);
+              }
+            } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
+              alert("Sorry, geocoder API failed to locate the address.");
+            } else {
+              alert("Sorry, geocoder API failed with an error.");
+            }
+          });
+        });
+
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+      $(document).on('click','[data-js_slide_up]',function (e) {
+          var slide_ele= $(this).closest($(this).data("js_slide_up"));
+          var show_ele=slide_ele.next($(this).data('next_show'));
+          slide_ele.slideUp();
+          show_ele.removeClass('hide');
+        // body...
+      })
+    </script>
+<% end %>
+
+<div id="mainContainer">
+  <div id="pushobj">
+    <p style="overflow: hidden;">
+      <input id="map-search" type="text" style="width: 60%; float: left;" value="Disneyland, 1313 S Harbor Blvd, Anaheim, CA 92802, USA" maxlength="100">
+      <input id="map-func-1" type="button" style="width: 19%; float: left;" value="Locate Address">
+      <input id="map-func-2" type="button" style="width: 19%; float: right;" value="Detect Location">
+      <button data-js_slide_up="#pushobj" data-next_show="#pushobj1">Next</button>
+    </p>
+    <div id="outer-map" style="width:100%; height: 100%; position: absolute; display:">
+      <div id="map-canvas"></div>
+    </div>
+    
+  </div>
+
+  <div id="pushobj1" class="hide">
+  Shnamu
+  </div>
 </div>

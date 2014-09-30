@@ -5,8 +5,8 @@ class CreateSpotfixes < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.datetime :fix_date
+      t.integer :city_id
       t.string :location
-      t.string :city
       t.float :latitude
       t.float :longitude
       t.boolean :active #not sure how to use

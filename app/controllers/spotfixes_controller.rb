@@ -9,7 +9,8 @@ class SpotfixesController < ApplicationController
   end
 
   def new
-    @spotfix = Spotfix.new    
+    @city = City.find_or_create(params[:city_name])
+    @spotfix = Spotfix.new(city_id: @city.id)   
   end
 
   def create

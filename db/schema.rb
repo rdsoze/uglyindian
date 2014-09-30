@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928081033) do
+ActiveRecord::Schema.define(version: 20140930083214) do
 
   create_table "attendees", force: true do |t|
     t.integer  "user_id"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20140928081033) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
+    t.integer  "zoom_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["name"], name: "index_cities_on_name", unique: true, using: :btree
 
   create_table "invites", force: true do |t|
     t.integer  "user_id"
@@ -53,11 +64,11 @@ ActiveRecord::Schema.define(version: 20140928081033) do
 
   create_table "spotfixes", force: true do |t|
     t.integer  "user_id"
-    t.text     "name"
+    t.string   "name"
     t.text     "description"
     t.datetime "fix_date"
+    t.integer  "city_id"
     t.string   "location"
-    t.string   "city"
     t.float    "latitude",    limit: 24
     t.float    "longitude",   limit: 24
     t.boolean  "active"
