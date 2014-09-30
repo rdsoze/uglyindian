@@ -1,5 +1,5 @@
 class SpotfixesController < ApplicationController
-  layout 'home'
+  layout 'loggedin'
   # before_filter :user_signed_in?
   # before_filter :fetch_location
 

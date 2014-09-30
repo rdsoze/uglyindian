@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout 'home'
+  layout 'loggedin'
   # before_filter :user_signed_in?
 
   def index
