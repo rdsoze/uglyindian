@@ -3,5 +3,27 @@ body {
 }
 
 .container {
-  height: 100%;
+  	height: 100%;
+}
+
+#map-canvas { 
+	height: 100%; 
+	width: 100%; 
+	margin: 0; 
+	padding: 0;
+}
+
+.city-select {
+  text-align: center;
+}
+
+.city-select h1 {
+  padding-bottom: 50px;
+}
+
+.city-select p {
+	font-size: 50px;
+}
+
+span.city {
 }

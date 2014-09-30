@@ -9,8 +9,7 @@ class SpotfixesController < ApplicationController
   end
 
   def new
-    @city = City.find_or_create(params[:city_name])
-    @spotfix = Spotfix.new(city_id: @city.id)   
+    @spotfix = Spotfix.new()   
   end
 
   def create
@@ -43,11 +42,18 @@ class SpotfixesController < ApplicationController
     end
   end
 
+  def get_lat_lng
+    @city = City.find_or_create(params[:city_name])
+    render json: @city
+  end
+
   private
 
   def spotfix_params
     params.permit(:description, :fix_date, :location_1, :location_2, :latitude, :longitude, :active)    
   end
+
+
 
   
 

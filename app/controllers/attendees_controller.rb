@@ -1,4 +1,4 @@
-class SpotfixesController < ApplicationController
+class AttendeesController < ApplicationController
   layout 'fluid'
   before_filter :user_signed_in?
   before_filter :fetch_location

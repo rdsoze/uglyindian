@@ -20,3 +20,13 @@ Spotfix.create([
   {name: 'Fixie #12517', fix_date: now + 3.days, latitude: 12.960287, longitude: 77.642013, description: '', location: '', city_id: city.id},
   {name: 'Fixie #12518', fix_date: now + 4.days, latitude: 12.964888, longitude: 77.642785, description: '', location: '', city_id: city.id}
 ])
+
+City.create([
+  {name: 'Delhi'},
+  {name: 'Mumbai'},
+  {name: 'Kolkata'},
+  {name: 'Chennai'},
+  {name: 'Leh'},
+  {name: 'Manail'},
+  {name: 'Srinagar'},
+])

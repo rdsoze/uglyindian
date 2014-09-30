@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'intro' => 'home#index', :as => :intro
 
   resources :users
-  resources :spotfixes
+  resources :spotfixes do
+    get 'get_lat_lng', :on => :collection
+  end
   resources :photos
 
   root :to => 'spotfixes#index'
