@@ -2,6 +2,7 @@ class CreateSpotfixes < ActiveRecord::Migration
   def change
     create_table :spotfixes do |t|
       t.integer :user_id #leader of the spotfix
+      t.string :name
       t.text :description
       t.datetime :fix_date
       t.string :location

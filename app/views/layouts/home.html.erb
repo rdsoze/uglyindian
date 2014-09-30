@@ -40,7 +40,6 @@
             $(document).ready(function(){
                 // HTML markup implementation, overlap mode
                 $( '#menu' ).multilevelpushmenu({
-                    
                     menuWidth: '20%', // '450px', '30em', '25%' will also work
                     menuHeight: '100%'
                 });
@@ -55,19 +54,13 @@
         <h2><i class="fa fa-reorder"></i>Menu</h2>
         <ul>
             <li>
-                <a href="#"><i class="fa fa-laptop"></i>Create a Spotfix</a>
+                <a href="/spotfixes/new"><i class="fa fa-laptop"></i>Create a Spotfix</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-book"></i>Join a Spotfix</a>
+                <a href="/spotfixes"><i class="fa fa-book"></i>Discover a Spotfix</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-shopping-cart"></i>Contribute</a>
-            </li>
-            <li>
-                <a href="#">My Fixes</a>
-            </li>
-            <li>
-                <a href="#">Credits</a>
+                <a href="/spotfixes/contribute"><i class="fa fa-shopping-cart"></i>Contribute</a>
             </li>
             <li>
                 <%= link_to 'Logout', logout_path %>

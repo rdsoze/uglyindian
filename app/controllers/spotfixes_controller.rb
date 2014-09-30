@@ -4,7 +4,8 @@ class SpotfixesController < ApplicationController
   # before_filter :fetch_location
 
   def index
-    @spotfixes = Spotfix.all
+    spotfixes = Spotfix.all
+    @fixies = spotfixes.collect { |sf| { latitude: sf.latitude, longitude: sf.longitude,  info: sf.info } } 
   end
 
   def new

@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :spotfixes
   resources :photos
 
-  root :to => 'home#index'
+  root :to => 'spotfixes#index'
 end

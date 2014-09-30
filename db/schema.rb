@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140928081033) do
 
   create_table "spotfixes", force: true do |t|
     t.integer  "user_id"
+    t.text     "name"
     t.text     "description"
     t.datetime "fix_date"
     t.string   "location"
