@@ -25,8 +25,10 @@ Each user will have a profile card with minimum details. There is a possibility 
 **Contribute** This feature will allows user to broadcast a ‘need’ for the spot fix. For eg., if they require more people to help out or to get cleaning equipment.
 A broadcast could be sent to the nearby users. On the contribute page, the requests are displayed and can be contributed to.
 
+---
+
 **Wireframes**
-[Website](https://www.dropbox.com/s/s0buscu3hn534f7/UglyIndian.pdf?dl=0) [Mobile](https://www.dropbox.com/s/8kuj9zb1dqd0gj0/UglyIndianDash.png?dl=0)
+[Website](https://www.dropbox.com/s/s0buscu3hn534f7/UglyIndian.pdf?dl=0) and [Mobile](https://www.dropbox.com/s/8kuj9zb1dqd0gj0/UglyIndianDash.png?dl=0)
 
 **Prototype**
 Given the available time, we decided to focus on utilising our strengths to build the application which is why we are currently working on it as a web application.
