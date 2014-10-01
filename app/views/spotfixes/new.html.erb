@@ -35,8 +35,22 @@
           });
         });
 
+        google.maps.event.addListener(map, "idle", function() {
+          marker.setPosition(map.getCenter());
+          $("input#spotfix_latitude").val(map.getCenter().lat())
+          $("input#spotfix_longitude").val(map.getCenter().lng())
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function (event) {
+          $("input#spotfix_latitude").val(this.getPosition().lat());
+          $("input#spotfix_longitude").val(this.getPosition().lng());
+        });
+
+        $( "input#spotfix_fix_date" ).datepicker({dateFormat: "dd-mm-yy"});
+
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+
       $(document).on('click','[data-js_slide_up]',function (e) {
           var slide_ele= $(this).closest($(this).data("js_slide_up"));
           var show_ele=slide_ele.next($(this).data('next_show'));
@@ -47,11 +61,13 @@
         // body...
       })
 
+      //step 2
       $(document).on('click', 'input#map-continue', function(e){
-        $("section.outer-map").slideUp(2000);
+        $("section.outer-map").slideUp(400);
         $("section.form").show();
       });
 
+      //step 1
       $(document).on('click', 'span.city', function(e){
         $("section.outer-map").show();
         city_name = $(this).text();
@@ -70,6 +86,7 @@
           .done(function( city ) {
             console.log(city)
             changeMarkerPosition(city.latitude, city.longitude);
+            $("input#spotfix_city_id").val(city.id)
           });
       };
 
@@ -86,6 +103,8 @@
         setTimeout(function(){map.setCenter(latlng)}, 10) ;
         google.maps.event.trigger(map, 'resize');
       };
+
+
 
     </script>
 <% end %>
@@ -115,7 +134,29 @@
   </section>
 
   <section class="form" style="width:80%; height: 65%; position: absolute; display: none; ">
-    <h1>FORM</h1>
+    <%= bootstrap_form_for(@spotfix, :html => { :multipart => true }) do |f| %>
+     <div class="field">
+       <%= f.text_field :description %>
+     </div>
+
+      <%= f.hidden_field :city_id %>
+      <%= f.hidden_field :latitude %>
+      <%= f.hidden_field :longitude %>
+
+      <div class="field">
+       <%= f.text_field :fix_date %>
+     </div>
+
+     <%= f.fields_for :photos do |p| %>
+       <div class="field">
+         <%= p.file_field :photo, :multiple => true, name: "photos[image][]" %>
+       </div>
+     <% end %>
+
+      <div class="actions">
+      <%= f.submit %>
+      </div>
+    <% end %>
   </section>
 </div>
 

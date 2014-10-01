@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140930083214) do
     t.integer  "spotfix_id"
     t.integer  "user_id"
     t.string   "type"
-    t.string   "url"
+    t.string   "image"
     t.float    "latitude",   limit: 24
     t.float    "longitude",  limit: 24
     t.datetime "created_at"

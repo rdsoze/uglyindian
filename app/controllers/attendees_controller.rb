@@ -1,8 +1,6 @@
 class AttendeesController < ApplicationController
   layout 'fluid'
   before_filter :user_signed_in?
-  before_filter :fetch_location
-
 
   def index
     @attendees = current_user.attendees
@@ -13,7 +11,8 @@ class AttendeesController < ApplicationController
   end
 
   def create
-    @attendee = Attendee.create(spotfix_params)
+    @attendee = Attendee.create(user_id: current_user.id, spotfix_id: params[:spotfix_id])
+    redirect_to :back, notice: "You are now attending this Spotfix"
   end
 
   def edit

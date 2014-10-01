@@ -9,11 +9,27 @@ class SpotfixesController < ApplicationController
   end
 
   def new
-    @spotfix = Spotfix.new()   
+    @spotfix = Spotfix.new()  
+    @photo = @spotfix.photos.build 
+  end
+
+  def show
+    @spotfix = Spotfix.find(params[:id])
+    @attending = Attendee.where(user_id: current_user.id, spotfix_id: params[:id])
   end
 
   def create
-    @spotfix = Spotfix.create(spotfix_params)
+    @spotfix = Spotfix.new(spotfix_params)
+    respond_to do |format|
+      if @spotfix.save
+       photo_params['image'].each do |a|
+          @photo = @spotfix.photos.create!(:image => a, :spotfix_id => @spotfix.id)
+       end
+       format.html { redirect_to @spotfix, notice: 'Spotfix was successfully created.' }
+     else
+       format.html { render action: 'new' }
+     end
+   end
   end
 
   def edit
@@ -50,7 +66,12 @@ class SpotfixesController < ApplicationController
   private
 
   def spotfix_params
-    params.permit(:description, :fix_date, :location_1, :location_2, :latitude, :longitude, :active)    
+    # params.permit(:spotfix => [ :description, :fix_date, :location, :city_id, :latitude, :longitude], :photos => [:image => []])
+    params.require(:spotfix).permit(:description, :fix_date, :location, :city_id, :latitude, :longitude)
+  end
+
+  def photo_params
+    params.require(:photos).permit(:image => [])
   end
 
 

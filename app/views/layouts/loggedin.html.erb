@@ -29,17 +29,16 @@
                 <li class="active"><a href="/spotfixes">Home</a></li>
                 <li><a href="/spotfixes/new">Create a Spotfix</a></li>
                 <li><a href="/spotfixes">Join a Spotfix</a></li>
-                <li><a href="#contact">Contribute</a></li>
+                <li><a href="#contact">Contribute to a Spotfix</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Settings</a></li>
                 <li><a href="/logout">Logout</a></li>
                 <li class="active"><a href="./"><%= current_user.name %></a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
         </div>
-
+        <%= bootstrap_flash %>
         <%= yield %>
     </body>
 </html>

@@ -4,7 +4,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.integer :spotfix_id
       t.integer :user_id
       t.string :type
-      t.string :url
+      t.string :image
       t.float :latitude
       t.float :longitude
 

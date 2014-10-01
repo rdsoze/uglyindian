@@ -1,6 +1,6 @@
 class City < ActiveRecord::Base
   geocoded_by :full_name
-  before_create :geocode  
+  before_create :geocode, if: ->(obj){ obj.name.present? and obj.latitude.nil? }  
 
   def self.find_or_create(name)
     city = City.find_by_name(name)
