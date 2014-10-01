@@ -1,4 +1,4 @@
-# Ugly Indian Hackathon Submission
+# [Ugly Indian Hackathon Submission](https://github.com/indiarising/hackathon/blob/master/README.md) 
 
 ### Our Concept:
 
