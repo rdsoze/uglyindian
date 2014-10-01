@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :photos
   resource :attendees
   
-  root :to => 'spotfixes#index'
+  root :to => 'home#index'
 
 end

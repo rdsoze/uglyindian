@@ -1,6 +1,6 @@
 class SpotfixesController < ApplicationController
   layout 'loggedin'
-  # before_filter :user_signed_in?
+  before_filter :user_signed_in?
   # before_filter :fetch_location
 
   def index

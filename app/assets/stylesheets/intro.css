@@ -1,0 +1,9 @@
+/*
+ *= require bootstrap_and_overrides
+ *= require_self
+ */
+
+
+.row {
+  text-align: center;
+}
