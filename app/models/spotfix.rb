@@ -15,6 +15,7 @@ class Spotfix < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude, :address => :location
   before_create :reverse_geocode, if: ->(obj){ obj.location.nil? }
+  before_create :set_name, if: ->(obj){ obj.name.nil? }
 
   def deactivate
     self.update({ active: false })
@@ -45,6 +46,10 @@ class Spotfix < ActiveRecord::Base
   def short_loc
     loc = location.split(",")
     "#{loc[0..(loc.length - 3)].join(",")}"
+  end
+
+  def set_name
+    name = 13500 + id
   end
 
 end

@@ -28,20 +28,11 @@ body {
 span.city {
 }
 
-button.join {
-  float: right;
-  text-align: center;
-  margin-right: 25px;
+button.join, button.share {
+  margin-right: 50px;
   margin-top: 25px;
 }
 
 button.join a, button.share a, button.view a {
   color: #FFFFFF;
-}
-
-button.share {
-  float: right;
-  text-align: center;
-  margin-right: 100px;
-  margin-top: 25px;  
 }

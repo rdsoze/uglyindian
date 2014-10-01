@@ -15,7 +15,7 @@ class SpotfixesController < ApplicationController
 
   def show
     @spotfix = Spotfix.find(params[:id])
-    @attending = Attendee.where(user_id: current_user.id, spotfix_id: params[:id])
+    @attending = Attendee.where(user_id: current_user.id, spotfix_id: params[:id]).first
   end
 
   def create
