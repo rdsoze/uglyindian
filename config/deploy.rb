@@ -4,7 +4,7 @@ lock '3.2.1'
 set :application, 'uglyindian'
 set :repo_url, 'git@bitbucket.org:rdsoze/uglyindian.git'
 
-set :branch, 'master'
+set :branch, 'web'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 set :ssh_options, {
   forward_agent: true,
