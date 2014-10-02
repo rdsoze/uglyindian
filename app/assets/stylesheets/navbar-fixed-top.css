@@ -28,7 +28,7 @@ body {
 span.city {
 }
 
-button.join, button.share {
+button.join, button.share, button.invite {
   margin-right: 50px;
   margin-top: 25px;
 }

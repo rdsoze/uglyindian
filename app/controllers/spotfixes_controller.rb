@@ -1,6 +1,6 @@
 class SpotfixesController < ApplicationController
   layout 'loggedin'
-  before_filter :user_signed_in?, :except => [:og]
+  before_filter :user_signed_in?, :except => [:og_share, :og_invite]
   # before_filter :fetch_location
 
   def index
@@ -68,9 +68,16 @@ class SpotfixesController < ApplicationController
     render json: @city
   end
 
-  def og
+  def og_share
     @spotfix = Spotfix.find(params[:id])
     @city = @spotfix.city
+    render layout: 'og'
+  end
+
+  def og_invite
+    @spotfix = Spotfix.find(params[:id])
+    @city = @spotfix.city
+    render layout: 'og'
   end
 
   private

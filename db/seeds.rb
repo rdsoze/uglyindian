@@ -46,3 +46,12 @@ Cavalry Road, Shumran Lines, Delhi Cantonment, New Delhi, Delhi 110010, India', 
 10th Road, Khar West, Mumbai, Maharashtra 400052, India', city_id: mumbai.id},
   {name: 'Fixie #12526', fix_date: now + 4.days, latitude: 19.058711, longitude: 72.836866, description: short_description, location: '8, Swami Vivekanand Road, Bandra West, Mumbai, Maharashtra 400050, India', city_id: mumbai.id}
 ])
+
+img1 = File.open('app/assets/images/dirty1.jpg')
+img2 = File.open('app/assets/images/dirty2.jpg')
+Spotfix.each do |sf|
+  sf.photos.create!([
+    {image: => img1, spotfix_id: sf.id },
+    {image: => img2, spotfix_id: sf.id }
+  ])
+end

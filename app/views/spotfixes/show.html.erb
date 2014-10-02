@@ -13,12 +13,18 @@
             appId: <%= Rails.application.secrets['facebook']['app_id'] %>,
           });     
         });
-              $("button.share").on('click', function(e){
-        FB.ui({
-          method: 'share',
-          href: "<%= og_spotfix_url(@spotfix.id) %>",
-        }, function(response){});
-      });
+        $("button.share").on('click', function(e){
+          FB.ui({
+            method: 'share',
+            href: "<%= og_share_spotfix_url(@spotfix.id) %>",
+          }, function(response){});
+        });
+        $("button.invite").on('click', function(e){
+          FB.ui({
+            method: 'send',
+            href: "<%= og_invite_spotfix_url(@spotfix.id) %>",
+          }, function(response){});
+        });
       });
 
       function initialize() {
@@ -56,6 +62,9 @@
         <% end %>
         <button type="button" class="share btn btn-primary">
         Share
+        </button>
+        <button type="button" class="invite btn btn-primary">
+        Invite
         </button>
       </div>
     </div>

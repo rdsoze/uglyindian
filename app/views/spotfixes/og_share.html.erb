@@ -1,0 +1,6 @@
+<% content_for :head do %> 
+    <meta property="og:title" content="Join a Spotix" />
+    <meta property="og:description" content="Folks around you are planning to cleanup a street in <%= @city.name %>. Join them now." /> 
+    <meta property="og:image" content="http://utstatic.a.cdnify.io/wp-content/uploads/2013/02/litter2-533x400.jpg" />
+    <script> location.href = "<%= spotfix_url(@spotfix.id)%>"; </script>
+<% end %>
