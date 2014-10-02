@@ -14,7 +14,6 @@
           });     
         });
               $("button.share").on('click', function(e){
-        alert('clicked');
         FB.ui({
           method: 'share',
           href: "<%= og_spotfix_url(@spotfix.id) %>",
