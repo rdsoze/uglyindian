@@ -30,6 +30,9 @@ A broadcast could be sent to the nearby users. On the contribute page, the reque
 **Wireframes**
 [Website](https://www.dropbox.com/s/s0buscu3hn534f7/UglyIndian.pdf?dl=0) and [Mobile](https://www.dropbox.com/s/8kuj9zb1dqd0gj0/UglyIndianDash.png?dl=0)
 
+**Screenshots**
+The screenshots are at the end of this [doc](https://docs.google.com/document/d/1CMijsT0jvQ3MTj3Oo1N-286ntLrBfgBSRqtcnQDmPnY/edit#heading=h.6s99ysjox87p)
+
 **Prototype**
 Given the available time, we decided to focus on utilising our strengths to build the application which is why we are currently working on it as a web application.
 The application is live at [http://ugly-indian.geekd.in/](http://ugly-indian.geekd.in/)
