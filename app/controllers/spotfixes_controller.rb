@@ -22,8 +22,10 @@ class SpotfixesController < ApplicationController
     @spotfix = Spotfix.new(spotfix_params)
     respond_to do |format|
       if @spotfix.save
-       photo_params['image'].each do |a|
-          @photo = @spotfix.photos.create!(:image => a, :spotfix_id => @spotfix.id)
+        if params['photos']
+         params['photos']['image'].each do |a|
+            @photo = @spotfix.photos.create!(:image => a, :spotfix_id => @spotfix.id)
+         end
        end
        format.html { redirect_to @spotfix, notice: 'Spotfix was successfully created.' }
      else
@@ -61,6 +63,11 @@ class SpotfixesController < ApplicationController
   def get_lat_lng
     @city = City.find_or_create(params[:city_name])
     render json: @city
+  end
+
+  def og
+    @spotfix = Spotfix.find(params[:id])
+    @city = @spotfix.city
   end
 
   private

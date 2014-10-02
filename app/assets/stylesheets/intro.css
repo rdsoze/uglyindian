@@ -4,7 +4,7 @@
  */
 
 
-.row {
+ .row {
   text-align: center;
 }
 
@@ -12,4 +12,9 @@
   width: 30%;
   text-align: center;
   margin: auto;
+}
+
+.centering {
+ position: relative;
+ margin: auto;
 }

@@ -35,6 +35,17 @@
           });
         });
 
+        if (navigator.geolocation) {
+          google.maps.event.addDomListener(document.getElementById("map-func-2"), "click", function() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+            }, function() {
+              alert("Sorry, geolocation API failed to detect your location.");
+            });
+          });
+          document.getElementById("map-func-2").disabled = false;
+        }
+
         google.maps.event.addListener(map, "idle", function() {
           marker.setPosition(map.getCenter());
           $("input#spotfix_latitude").val(map.getCenter().lat())
@@ -59,7 +70,18 @@
 
 
         // body...
-      })
+      });
+
+      $(document).on('keypress', '.enter-city', function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+          $("section.outer-map").show();
+          city_name = $(this).val();
+          $("section.city-select").slideUp(400);
+          console.log(city_name);
+          setTimeout(function(){fetchLatLng(city_name)}, 10); 
+        }
+      });
 
       //step 2
       $(document).on('click', 'input#map-continue', function(e){
@@ -111,7 +133,7 @@
 
 <div class="container">
   <section class="city-select" style="width:80%; height: 80%; position: absolute; ">
-    <h1>Enter your city:     <input id="city" name="city"></h1>
+    <h1>Enter your city:     <input class="enter-city" id="city" name="city"></h1>
     <h1>or Select
     </h1>
     <p>

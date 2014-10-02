@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :spotfixes do
     get 'get_lat_lng', :on => :collection
-    get 'share', :on => :member
+    get 'og', :on => :member
   end
   
   resources :photos

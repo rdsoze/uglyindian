@@ -26,8 +26,8 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/spotfixes">Home</a></li>
-                <li><a href="/spotfixes/new">Create a Spotfix</a></li>
+                <li class="<%= is_active_nav?('spotfixes','index') %>"><a href="/spotfixes">Home</a></li>
+                <li class="<%= is_active_nav?('spotfixes','new') %>"><a href="/spotfixes/new">Create a Spotfix</a></li>
                 <li><a href="/spotfixes">Join a Spotfix</a></li>
                 <li><a href="#contact">Contribute to a Spotfix</a></li>
               </ul>

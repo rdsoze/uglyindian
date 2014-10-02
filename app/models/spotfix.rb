@@ -49,7 +49,7 @@ class Spotfix < ActiveRecord::Base
   end
 
   def set_name
-    name = 13500 + id
+    self.name = "Fixie ##{13500 + Spotfix.last.id}"
   end
 
 end

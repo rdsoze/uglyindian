@@ -68,13 +68,18 @@
   <div class="row" style="min-height: 500px;">
     <div class="col-md-8">
         <p style="text-align: center;"><%= @spotfix.short_loc %></p>
-        <p style="text-align: center;">To be fixed on: <%= @spotfix.fix_date.strftime("%e %b %Y %H:%M:%S%p") %></p>
+        <p style="text-align: center;">To be fixed on: <%= (@spotfix.fix_date.blank?)? 'Not yet decided' : @spotfix.fix_date.strftime("%e %b %Y %H:%M:%S%p") %></p>
         <h2>Description</h2>
-        <p>What? <%= @spotfix.description %></p>
+        <p><%= (@spotfix.description.blank?)? 'No description was entered' : @spotfix.description %></p>
         <h2>Photos</h2>
-        <p>Before:
-        <% @spotfix.photos.each do |p| %>
-          <%= img_tag p.image %>
+        <p>Before:</p>
+        <p>
+        <% if @spotfix.photos.empty? %>
+          No pics uploaded
+        <% else %>
+          <% @spotfix.photos.each do |p| %>
+            <%= image_tag p.image_url(:small) %>
+          <% end %>
         <% end %>
         </p>
         <p>After:<br>
