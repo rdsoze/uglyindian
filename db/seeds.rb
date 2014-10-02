@@ -49,9 +49,9 @@ Cavalry Road, Shumran Lines, Delhi Cantonment, New Delhi, Delhi 110010, India', 
 
 img1 = File.open('app/assets/images/dirty1.jpg')
 img2 = File.open('app/assets/images/dirty2.jpg')
-Spotfix.each do |sf|
+Spotfix.all.each do |sf|
   sf.photos.create!([
-    {image: => img1, spotfix_id: sf.id },
-    {image: => img2, spotfix_id: sf.id }
+    {image: img1, spotfix_id: sf.id },
+    {image: img2, spotfix_id: sf.id }
   ])
 end

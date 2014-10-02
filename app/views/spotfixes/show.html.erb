@@ -69,7 +69,7 @@
       </div>
     </div>
   </div>
-  <div class="row" style="min-height: 500px;">
+  <div class="row" style="min-height: 500px; margin-top: 50px;">
     <div class="col-md-8">
         <p style="text-align: center;"><%= @spotfix.short_loc %></p>
         <p style="text-align: center;">To be fixed on: <%= (@spotfix.fix_date.blank?)? 'Not yet decided' : @spotfix.fix_date.strftime("%e %b %Y %H:%M:%S%p") %></p>
