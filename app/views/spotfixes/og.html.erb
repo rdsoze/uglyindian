@@ -1,0 +1,6 @@
+<% content_for :head do %> 
+    <meta property="og:title" content="Join a Spotix" />
+    <meta property="og:description" content="Folks around you are planning to cleanup a street in <% @city.name %>. Join them now." /> 
+    <meta property="og:image" content="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-prn1/851565_496755187057665_544240989_n.jpg" />
+    <script> location.href = "<%= spotfix_url(@spotfix.id)%>"; </script>
+<% end %>

@@ -1,8 +1,4 @@
-<% content_for :head do %>
-    <meta property="og:url" content="<%= request.original_url %>" />    
-    <meta property="og:title" content="Chocolate Pecan Pie" />
-    <meta property="og:description" content="This pie is delicious!" /> 
-    <meta property="og:image" content="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-prn1/851565_496755187057665_544240989_n.jpg" /> 
+<% content_for :head do %> 
     <style type="text/css">
     #map-canvas { height: 100%; width: 100%; margin: 0; padding: 0;}
     </style>
@@ -21,7 +17,7 @@
         alert('clicked');
         FB.ui({
           method: 'share',
-          href: "<%= request.original_url %>",
+          href: "<%= og_spotfix_url(@spotfix.id) %>",
         }, function(response){});
       });
       });
