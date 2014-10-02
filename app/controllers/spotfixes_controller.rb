@@ -26,12 +26,15 @@ class SpotfixesController < ApplicationController
          params['photos']['image'].each do |a|
             @photo = @spotfix.photos.create!(:image => a, :spotfix_id => @spotfix.id)
          end
-       end
+        end
+        unless params['requirements'].blank?
+          @need = @spotfix.needs.create!(description: params['requirements'])
+        end
        format.html { redirect_to @spotfix, notice: 'Spotfix was successfully created.' }
-     else
-       format.html { render action: 'new' }
-     end
-   end
+      else
+        format.html { render action: 'new' }
+      end
+    end
   end
 
   def edit

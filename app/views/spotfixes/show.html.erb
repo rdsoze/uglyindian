@@ -85,7 +85,10 @@
         <p>After:<br>
         Please add some pics once this gets over.
         </p>
-
+        <h2>Requirements</h2>
+        <p>
+        <%= (@spotfix.needs.blank?)? 'No requirement was entered' : @spotfix.needs.first.description %>
+        </p>
 
     </div>
 
