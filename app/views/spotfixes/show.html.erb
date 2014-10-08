@@ -22,7 +22,7 @@
         $("button.invite").on('click', function(e){
           FB.ui({
             method: 'send',
-            href: "<%= og_invite_spotfix_url(@spotfix.id) %>",
+            link: "<%= og_invite_spotfix_url(@spotfix.id) %>",
           }, function(response){});
         });
       });
