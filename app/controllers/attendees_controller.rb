@@ -29,17 +29,6 @@ class AttendeesController < ApplicationController
     @attendee.deactivate
   end
 
-  def lead
-    @spotfix = Spotfix.find(params[:id])
-    @spotfix.leader = User.find(params[:user_id])
-  end
-
-  def unlead
-    @spotfix = Spotfix.find(params[:id])
-    if @spotfix.leader_id == params[:user_id]
-      @spotfix.leader = nil
-    end
-  end
 
   private
 

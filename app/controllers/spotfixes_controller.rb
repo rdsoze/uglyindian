@@ -1,6 +1,6 @@
 class SpotfixesController < ApplicationController
   layout 'loggedin'
-  before_filter :user_signed_in?, :except => [:og_share, :og_invite]
+  before_filter :user_signed_in?, :except => [:index, :show, :og_share, :og_invite]
   # before_filter :fetch_location
 
   def index
@@ -15,7 +15,7 @@ class SpotfixesController < ApplicationController
 
   def show
     @spotfix = Spotfix.find(params[:id])
-    @attending = Attendee.where(user_id: current_user.id, spotfix_id: params[:id]).first
+    @attending = (current_user)? Attendee.where(user_id: current_user.id, spotfix_id: params[:id]).first : nil
   end
 
   def create
@@ -49,6 +49,16 @@ class SpotfixesController < ApplicationController
   def destroy
     @spotfix = Spotfix.find(params[:id])
     @spotfix.deactivate
+  end
+
+  def join
+    @attendee = Attendee.create(user_id: current_user.id, spotfix_id: params[:id])
+    redirect_to spotfix_path(params[:id]), notice: "You are now attending this Spotfix"
+  end
+
+  def leave
+    Attendee.where(user_id: current_user.id, spotfix_id: params[:id]).delete_all
+    redirect_to spotfix_path(params[:id]), notice: "You have left this Spotfix"
   end
 
   def lead

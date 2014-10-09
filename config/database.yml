@@ -47,6 +47,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  database: <%= ENV['UI_DB'] %>
+  username: <%= ENV['UI_DB_USER'] %>
+  password: <%= ENV['UI_DB_PASSWORD'] %>
+
 production:
   <<: *default
   database: <%= ENV['UI_DB'] %>

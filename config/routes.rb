@@ -3,17 +3,18 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', :as => :logout
   get '/auth/failure' => 'sessions#auth_fail'
   get 'intro' => 'home#index', :as => :intro
-
   resources :users
   resources :spotfixes do
     get 'get_lat_lng', :on => :collection
     get 'og_share', :on => :member
     get 'og_invite', :on => :member
+    get 'join', :on => :member
+    get 'leave', :on => :member
   end
   
   resources :photos
   resource :attendees
   
-  root :to => 'home#index'
+  root :to => 'spotfixes#index'
 
 end

@@ -13,6 +13,7 @@
         <%= yield :head %>
     </head>
     <body>
+        <div id="fb-root"></div>
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -27,13 +28,17 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="<%= is_active_nav?('spotfixes','index') %>"><a href="/spotfixes">Home</a></li>
-                <li class="<%= is_active_nav?('spotfixes','new') %>"><a href="/spotfixes/new">Create a Spotfix</a></li>
+                <li class="<%= is_active_nav?('spotfixes','new') %>"><%= link_to('Create Spotfix', login_check(new_spotfix_path)) %></li>
                 <li><a href="/spotfixes">Join a Spotfix</a></li>
                 <li><a href="#contact">Contribute to a Spotfix</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
+              <% if current_user %>
                 <li><a href="/logout">Logout</a></li>
-                <li class="active"><a href="./"><%= current_user.name %></a></li>
+                <li class="active"><a href="#"><%= current_user.name %></a></li>
+              <% else %>
+                <li><a href="/auth/facebook">Sign in with Facebook</a>
+              <% end %>
               </ul>
             </div><!--/.nav-collapse -->
           </div>

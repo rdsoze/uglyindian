@@ -3,15 +3,16 @@ class SessionsController < ApplicationController
   	auth = request.env["omniauth.auth"]
 		user = User.find_by_uid(auth[:uid]) || User.create_user(auth)
 		session[:user_id] = user.id
-		redirect_to spotfixes_path
+		next_url = request.env["omniauth.params"]['next']
+	  (next_url)? (redirect_to next_url) : (redirect_to spotfixes_path)
 	end
 
 	def auth_fail
-		redirect_to intro_path, :notice => "Failed"
+		redirect_to root_path, :notice => "Failed"
 	end
 
 	def destroy
 		session[:user_id] = nil
-		redirect_to intro_path, :notice => "Logged out!"
+		redirect_to root_path, :notice => "Logged out!"
 	end
 end
