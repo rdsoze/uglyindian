@@ -5,4 +5,8 @@ class UsersController < ApplicationController
   def index
   end
 
+  def location
+    #set city, lat, long and location
+  end
+
 end

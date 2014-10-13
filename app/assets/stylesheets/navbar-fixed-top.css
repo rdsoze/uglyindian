@@ -36,3 +36,11 @@ button.join, button.share, button.invite {
 button.join a, button.share a, button.view a {
   color: #FFFFFF;
 }
+
+#infoWindow {
+  text-align: center;
+}
+
+.info-pic, .info-text {
+  display: inline;
+}

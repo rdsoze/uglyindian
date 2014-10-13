@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', :as => :logout
   get '/auth/failure' => 'sessions#auth_fail'
   get 'intro' => 'home#index', :as => :intro
-  resources :users
+  
+  resources :users do
+    post 'location', :on => :member
+  end
+  
   resources :spotfixes do
     get 'get_lat_lng', :on => :collection
     get 'og_share', :on => :member

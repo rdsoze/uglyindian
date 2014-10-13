@@ -54,13 +54,17 @@
     <div class="col-md-4">
       <div class="row" style="text-align: center;">
         <% if @attending %>
-        <button type="button" class="join btn btn-success">
-          <%= link_to('Leave', leave_spotfix_path(@spotfix.id)) %>
-        </button>
+          <%= link_to(leave_spotfix_path(@spotfix.id)) do %>
+            <button type="button" class="join btn btn-success">
+              Leave
+            </button>
+          <% end %>
         <% else %>    
-        <button type="button" class="join btn btn-primary">
-            <%= link_to('Join', login_check(join_spotfix_path(@spotfix.id))) %>
-        </button>
+          <%= link_to(login_check(join_spotfix_path(@spotfix.id))) do %>
+            <button type="button" class="join btn btn-primary">
+              Join
+            </button>
+          <% end %>
         <% end %>
         <button type="button" class="share btn btn-primary">
         Share
@@ -84,7 +88,7 @@
           No pics uploaded
         <% else %>
           <% @spotfix.photos.each do |p| %>
-            <%= image_tag p.image_url(:small) %>
+            <%= image_tag p.image_url(:medium) %>
           <% end %>
         <% end %>
         </p>

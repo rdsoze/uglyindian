@@ -29,6 +29,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   #
 
   version :small do
+    process :scale => [150, 100]
+  end
+
+  version :medium do
     process :scale => [300, 200]
   end
 

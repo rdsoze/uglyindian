@@ -6,7 +6,7 @@
     </script>
     <script type="text/javascript">
       function initialize() {
-        var infowindow = new google.maps.InfoWindow();
+        var infowindow = new google.maps.InfoWindow({ 'maxWidth': '300'});
         var points = <%= raw @fixies.to_json %>;
         console.log(points)
         var mapOptions = {

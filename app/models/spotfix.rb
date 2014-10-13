@@ -26,16 +26,14 @@ class Spotfix < ActiveRecord::Base
   end
 
   def info
-    '<div id="content">'+
-      '<div id="siteNotice">'+
+    '<div id="infoWindow">'+
+      "<h4 class='heading'>#{name}</h4>"+
+      '<div class="content">'+
+      "<div class='info-pic'><img src='#{self.photos.first.image_url(:small)}' align='left'></div>" +
+      "<div class='info-text'>#{description}</div>" +
+      "<br><br><a href=/spotfixes/#{id}><button type='button' class='view btn btn-primary'>More Details</button></a>" + 
       '</div>'+
-      "<h1 id='firstHeading' class='firstHeading'>#{name}</h1>"+
-      '<div id="bodyContent">'+
-      "<p>#{description}</p>" +
-      "<button type='button' class='view btn btn-primary'>" + 
-      "<a href=/spotfixes/#{id}>View</a>"+
-      "</button>" +
-      '</div>'+
+      '</div>' +
       '</div>'
   end
 

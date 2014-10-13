@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930083214) do
+ActiveRecord::Schema.define(version: 20141012120812) do
 
   create_table "attendees", force: true do |t|
     t.integer  "user_id"
@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(version: 20140930083214) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
   end
 
 end
