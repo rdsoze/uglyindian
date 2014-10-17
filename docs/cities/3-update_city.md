@@ -1,17 +1,17 @@
 # Update City
-**Endpoint** : /cities/<city_id>.json
+**Endpoint** : /cities/<:city_id>
 
 **Type**	 : PUT
 
-**Sample Request** : api.ugly-indian.geekd.in/cities/1.json
-```code
+**Sample Request** : api.ugly-indian.geekd.in/cities/1
+```json
 {
 	"name" : 'Bengaluru',
 }
 ```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true
 }

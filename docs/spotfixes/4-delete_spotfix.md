@@ -1,12 +1,12 @@
 # Delete Spotfix
-**Endpoint** : /spotfixes/<spotfix_id>.json
+**Endpoint** : /spotfixes/<:spotfix_id>
 
 **Type**	 : DELETE
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1.json
+**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true,
 }

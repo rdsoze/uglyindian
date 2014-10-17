@@ -1,10 +1,10 @@
 # Create INvite
-**Endpoint** : /invites.json
+**Endpoint** : /invites
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/invites.json
-```code
+**Sample Request** : api.ugly-indian.geekd.in/invites
+```json
 {
 	"spotfix_id" : 1
 	"user_id" : 1,
@@ -13,7 +13,7 @@
 ```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true,
 	"invite_id" : 1

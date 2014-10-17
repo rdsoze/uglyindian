@@ -1,19 +1,19 @@
 # Create City
-**Endpoint** : /cities.json
+**Endpoint** : /cities
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/cities.json
-```code
+**Sample Request** : api.ugly-indian.geekd.in/cities
+```json
 {
-	"name" : 'Bangalore'
+	"name" : "Bangalore",
 	"latitude" : 12.9115 ,
 	"longitude" : 77.6457
 }
 ```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true,
 	"city_id" : 1

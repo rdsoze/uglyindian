@@ -1,10 +1,10 @@
 # Create Spotfix
-**Endpoint** : /spotfixes.json
+**Endpoint** : /spotfixes
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes.json
-```code
+**Sample Request** : api.ugly-indian.geekd.in/spotfixes
+```json
 {
 	"name" : 'Fixie #31256',
 	"description" : "sample description",
@@ -44,7 +44,7 @@
 ```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true,
 	"spotfix_id": 2

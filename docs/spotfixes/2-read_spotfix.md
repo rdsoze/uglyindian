@@ -1,12 +1,12 @@
 # Read Spotfix
-**Endpoint** : /spotfix/<spotfix_id>.json
+**Endpoint** : /spotfix/<:spotfix_id>
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1.json
+**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1
 
 **Sample Response** :
-```code
+```json
 {
 	"spotfix_id" : 1,
 	"name" : 'Fixie #31256',
@@ -44,7 +44,7 @@
 		"count" : 10,
 		"description" : "Long sidewalk. Atleast 10 folks required"
 	}
-	]
+	],
 	"attendees" : [
 	{
 		"name" : "Raison D'souza",

@@ -1,16 +1,17 @@
 # Join Spotfix
-**Endpoint** : /spotfixes/<spotfix_id>/join.json
+**Endpoint** : /spotfixes/<:spotfix_id>/join
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1/join.json
-```code :
+**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1/join
+```json
 {
 	"user_id" : 1
 }
+```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true,
 }

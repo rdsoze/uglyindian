@@ -1,12 +1,12 @@
 # List Needs
-**Endpoint** : /needs.json
+**Endpoint** : /needs
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/needs.json
+**Sample Request** : api.ugly-indian.geekd.in/needs
 
 **Sample Response** :
-```code
+```json
 [{
 	"need_id" : 1,
 	"spotfix_id" : 1,

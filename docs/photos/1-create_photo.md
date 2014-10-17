@@ -1,10 +1,10 @@
 # Create Photo
-**Endpoint** : /photos.json
+**Endpoint** : /photos
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/photos.json
-```code
+**Sample Request** : api.ugly-indian.geekd.in/photos
+```json
 {
 	"user_id" : 1,
 	"spotfix_id": 1,
@@ -16,7 +16,7 @@
 ```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true,
 	"photo_id" : 1

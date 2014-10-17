@@ -1,10 +1,10 @@
 # Create Need
-**Endpoint** : /needs.json
+**Endpoint** : /needs
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/needs.json
-```code
+**Sample Request** : api.ugly-indian.geekd.in/needs
+```json
 {
 	"spotfix_id" : 1
 	"name" : "Brooms",
@@ -14,7 +14,7 @@
 ```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true,
 	"need_id" : 1

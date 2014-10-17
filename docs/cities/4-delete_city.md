@@ -1,12 +1,12 @@
 # Delete City
-**Endpoint** : /cities/<city_id>.json
+**Endpoint** : /cities/<:city_id>
 
 **Type**	 : DELETE
 
-**Sample Request** : api.ugly-indian.geekd.in/cities/1.json
+**Sample Request** : api.ugly-indian.geekd.in/cities/1
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true
 }

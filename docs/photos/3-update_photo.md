@@ -1,10 +1,10 @@
 # Update Photo
-**Endpoint** : /photos/<photo_id>.json
+**Endpoint** : /photos/<:photo_id>
 
 **Type**	 : PUT
 
-**Sample Request** : api.ugly-indian.geekd.in/photos/1.json
-```code
+**Sample Request** : api.ugly-indian.geekd.in/photos/1
+```json
 {
 	"type" : "AFTER",
 }
@@ -12,7 +12,7 @@
 ```
 
 **Sample Response** :
-```code
+```json
 {
 	"success" : true
 }

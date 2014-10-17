@@ -1,13 +1,13 @@
 # Attendees of a Spotfix
-**Endpoint** : /spotfixes/<spotfix_id>/attendees.json
+**Endpoint** : /spotfixes/<:spotfix_id>/attendees
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1/attendees.json
+**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1/attendees
 
 **Sample Response** :
-```code
-{[
+```json
+[
 {
 	"user_id" : 1,
 	"name" : "Raison D'souza",
@@ -24,5 +24,5 @@
 	"city_id" : 1,
 	"fb_id" : '707975568' 
 }
-]}
+]
 ```

@@ -1,12 +1,12 @@
 # List Cities
-**Endpoint** : /cities.json
+**Endpoint** : /cities
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/cities.json
+**Sample Request** : api.ugly-indian.geekd.in/cities
 
 **Sample Response** :
-```code
+```json
 {[
 {
 	"city_id" : 1,

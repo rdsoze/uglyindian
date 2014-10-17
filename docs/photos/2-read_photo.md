@@ -1,12 +1,12 @@
 # Read Photo
-**Endpoint** : /photos/<photo_id>.json
+**Endpoint** : /photos/<:photo_id>
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/photos/1.json
+**Sample Request** : api.ugly-indian.geekd.in/photos/1
 
 **Sample Response** :
-```code
+```json
 {
 	"photo_id": 1,
 	"user_id" : 1,

@@ -1,12 +1,12 @@
 # Read City
-**Endpoint** : /cities/<city_id>.json
+**Endpoint** : /cities/<:city_id>
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/cities/1.json
+**Sample Request** : api.ugly-indian.geekd.in/cities/1
 
 **Sample Response** :
-```code
+```json
 {
 	"city_id" : 1,
 	"name" : 'Bangalore',

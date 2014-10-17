@@ -1,13 +1,13 @@
-# List Spotfix
-**Endpoint** : /spotfixes.json
+# List Spotfixes
+**Endpoint** : /spotfixes
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes.json
+**Sample Request** : api.ugly-indian.geekd.in/spotfixes
 
 **Sample Response** :
-```code
-{[
+```json
+[
 {
 	"spotfix_id" : 1,
 	"name" : 'Fixie #31256',
@@ -26,5 +26,5 @@
 	"longitude" : 77.6557,
 	"city_id" : 2,
 }
-]}
+]
 ```
