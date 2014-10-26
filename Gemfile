@@ -35,13 +35,15 @@ gem 'bootstrap_form'
 gem 'geocoder'
 gem 'carrierwave'
 gem 'rmagick'
-
-
+gem 'rabl'
+gem 'hashie'
 # gem 'pry'
 
 group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'capistrano',  '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
@@ -59,4 +61,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :photos
   has_many :invites, foreign_key: 'invitee_user_id'
   has_many :inviteds, class_name: 'Invite', foreign_key: 'user_id'
+  belongs_to :city
 
   class << self
     def create_user(auth)  
