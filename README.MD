@@ -1,4 +1,7 @@
-# [Ugly Indian Hackathon Submission](https://github.com/indiarising/hackathon/blob/master/README.md) 
+## [Api Documentation](http://tui-docs.geekd.in)
+For more details, click [here](https://github.com/rdsoze/uglyindian/wiki/Api-Docs)
+
+## [Ugly Indian Hackathon Submission](https://github.com/indiarising/hackathon/blob/master/README.md) 
 
 ### Our Concept:
 
