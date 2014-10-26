@@ -3,7 +3,7 @@
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1
+**Sample Request** : ugly-indian.geekd.in/api/spotfixes/1
 
 **Sample Response** :
 ```json
@@ -20,7 +20,7 @@
 		"user_id" : 10,
 		"photo_id" : 1,
 		"type" : "BEFORE",
-		"image_url" : "api.ugly-indian.geekd.in/assets/photos/1/small.jpg",
+		"image_url" : "ugly-indian.geekd.in/api/assets/photos/1/small.jpg",
 		"latitude" : 12.9115 ,
 		"longitude" : 77.6457,
 	},
@@ -28,7 +28,7 @@
 		"user_id" : 10,
 		"photo_id" : 2,
 		"type" : "BEFORE",
-		"image_url" : "api.ugly-indian.geekd.in/assets/photos/2/small.jpg",
+		"image_url" : "ugly-indian.geekd.in/api/assets/photos/2/small.jpg",
 		"latitude" : 12.9115,
 		"longitude" : 77.6457,
 	}

@@ -3,7 +3,7 @@
 
 **Type**	 : DELETE
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1
+**Sample Request** : ugly-indian.geekd.in/api/spotfixes/1
 
 **Sample Response** :
 ```json

@@ -3,7 +3,7 @@
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes
+**Sample Request** : ugly-indian.geekd.in/api/spotfixes
 
 **Sample Response** :
 ```json

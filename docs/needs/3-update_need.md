@@ -3,7 +3,7 @@
 
 **Type**	 : PUT
 
-**Sample Request** : api.ugly-indian.geekd.in/needs/1
+**Sample Request** : ugly-indian.geekd.in/api/needs/1
 ```json
 {
 	"name" : "Broomsticks"

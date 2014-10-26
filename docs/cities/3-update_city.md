@@ -3,7 +3,7 @@
 
 **Type**	 : PUT
 
-**Sample Request** : api.ugly-indian.geekd.in/cities/1
+**Sample Request** : ugly-indian.geekd.in/api/cities/1
 ```json
 {
 	"name" : 'Bengaluru',

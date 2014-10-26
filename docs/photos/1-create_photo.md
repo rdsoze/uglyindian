@@ -3,7 +3,7 @@
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/photos
+**Sample Request** : ugly-indian.geekd.in/api/photos
 ```json
 {
 	"user_id" : 1,

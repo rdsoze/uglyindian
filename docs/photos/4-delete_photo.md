@@ -3,7 +3,7 @@
 
 **Type**	 : DELETE
 
-**Sample Request** : api.ugly-indian.geekd.in/photos/1
+**Sample Request** : ugly-indian.geekd.in/api/photos/1
 
 **Sample Response** :
 ```json

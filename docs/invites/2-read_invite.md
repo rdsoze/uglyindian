@@ -3,7 +3,7 @@
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/invites/1
+**Sample Request** : ugly-indian.geekd.in/api/invites/1
 
 **Sample Response** :
 ```json

@@ -3,7 +3,7 @@
 
 **Type**	 : POST
 
-**Sample Request** : api.ugly-indian.geekd.in/cities
+**Sample Request** : ugly-indian.geekd.in/api/cities
 ```json
 {
 	"name" : "Bangalore",

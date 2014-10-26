@@ -3,7 +3,7 @@
 
 **Type**	 : GET
 
-**Sample Request** : api.ugly-indian.geekd.in/spotfixes/1/invite
+**Sample Request** : ugly-indian.geekd.in/api/spotfixes/1/invite
 ```json
 {
 	"user_id" : 1,
