@@ -8,6 +8,9 @@
 
 City.delete_all()
 Spotfix.delete_all()
+Photo.delete_all()
+Attendee.delete_all()
+Need.delete_all()
 
 now = DateTime.now()
 large_description = "Dummy entry with a long description.This is one spot that has never been cleaned before. Ok let's go clean it up soon. Oh, we need to make it a bit more longer. This is good enough I think."
@@ -49,9 +52,33 @@ Cavalry Road, Shumran Lines, Delhi Cantonment, New Delhi, Delhi 110010, India', 
 
 img1 = File.open('app/assets/images/dirty1.jpg')
 img2 = File.open('app/assets/images/dirty2.jpg')
+if User.count == 0
+  User.create([
+    { name: "Karthik Kastury", email: nil, gender: "male", uid: "10152441068273174"},
+    { name: "Raison D'souza", email: nil, gender: "male", uid: "10154675874340541" },
+    { name: "Dayanand Prabhu", email: nil, gender: "male", uid: "10152822098211383" },
+    { name: "Shanmugapriya Gunasekaran", email: nil, gender: "female", uid: "1497147443874081" }
+  ])
+end
+user_ids = User.limit(3).pluck(:id)
+
+needs = [
+  { name: 'People', count: 5, description: 'living things that dirty surroundings and later clean up' },
+  { name: 'Brooms', count: 8, description: 'things that humans use to clean' },
+  { name: 'Garbage Bags', count: 15, description: 'the dirt goes in here' }
+]
+
+
 Spotfix.all.each do |sf|
   sf.photos.create!([
-    {image: img1, spotfix_id: sf.id },
-    {image: img2, spotfix_id: sf.id }
+    { image: img1, spotfix_id: sf.id },
+    { image: img2, spotfix_id: sf.id }
   ])
+  attendees = user_ids.sample(2)
+  sf.attendees.create!([
+    { user_id: attendees[0] },
+    { user_id: attendees[1] }
+  ])
+  needs = needs.sample(2)
+  sf.needs.create!([needs[0], needs[1]])
 end

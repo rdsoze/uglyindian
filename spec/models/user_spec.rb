@@ -6,4 +6,5 @@ describe User do
   it { should have_many(:photos) }
   it { should have_many(:invites) }
   it { should have_many(:inviteds) }
+  it { should belong_to(:city) }
 end

@@ -17,3 +17,5 @@
 .rvmrc
 public/uploads
 pending
+docsite
+docs/_book

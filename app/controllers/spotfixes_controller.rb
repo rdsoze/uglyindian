@@ -68,7 +68,7 @@ class SpotfixesController < ApplicationController
 
   def unlead
     @spotfix = Spotfix.find(params[:id])
-    if @spotfix.leader_id == params[:user_id]
+    if @spotfix.user_id == params[:user_id]
       @spotfix.leader = nil
     end
   end
@@ -93,16 +93,7 @@ class SpotfixesController < ApplicationController
   private
 
   def spotfix_params
-    # params.permit(:spotfix => [ :description, :fix_date, :location, :city_id, :latitude, :longitude], :photos => [:image => []])
-    params.require(:spotfix).permit(:description, :fix_date, :location, :city_id, :latitude, :longitude)
+    params.permit(:description, :fix_date, :location, :city_id, :latitude, :longitude)
   end
-
-  def photo_params
-    params.require(:photos).permit(:image => [])
-  end
-
-
-
-  
 
 end
