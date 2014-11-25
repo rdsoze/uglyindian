@@ -1,4 +1,4 @@
-## [Api Documentation](http://tui-docs.geekd.in)
+## [Api Documentation](http://tui-docs.geekd.in)[![Build Status](https://api.travis-ci.org/rdsoze/uglyindian.svg?branch=master)](https://travis-ci.org/rdsoze/uglyindian)
 For more details, click [here](https://github.com/rdsoze/uglyindian/wiki/Api-Docs)
 
 ## [Ugly Indian Hackathon Submission](https://github.com/indiarising/hackathon/blob/master/README.md) 
