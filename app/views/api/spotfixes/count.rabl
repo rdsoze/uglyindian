@@ -1,0 +1,1 @@
+node(:spotfixes) { @spotfix_count }

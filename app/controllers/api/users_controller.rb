@@ -26,6 +26,15 @@ class Api::UsersController < Api::BaseController
     @user.delete
   end
 
+  def spotfixes
+    user = User.find(params[:id])
+    @spotfixes = user.spotfixes
+  end
+
+  def count
+    @attendee_count = Attendee.attended.count
+  end
+
   private
   def user_params
     params.permit(:name, :email, :gender, :city_id, :fb_id, :token, :latitude, :longitude)

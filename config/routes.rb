@@ -28,12 +28,20 @@ Rails.application.routes.draw do
       get 'join', :on => :member
       get 'leave', :on => :member
       get 'attendees', :on => :member
+      get 'spotfixes', :on => :member
+      get 'count', :on => :collection
     end
-    resources :users
+    resources :users do
+      get 'spotfixes', :on => :member
+      get 'count', :on => :collection
+    end
     resources :photos
     resources :needs
     resources :invites
-    resources :cities
+    resources :cities do
+      get 'spotfixes', :on => :member
+      get 'count', :on => :member
+    end
   end
 
 end

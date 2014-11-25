@@ -46,6 +46,10 @@ class Api::SpotfixesController < Api::BaseController
     @attendees = Spotfix.find(params[:id]).attendees
   end
 
+  def count
+    @spotfix_count = Spotfix.count
+  end
+
   private
 
   def spotfix_params

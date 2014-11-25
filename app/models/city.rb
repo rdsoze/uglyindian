@@ -1,4 +1,7 @@
 class City < ActiveRecord::Base
+  has_many :spotfixes
+  has_many :attendees, through: :spotfixes
+  
   geocoded_by :full_name
   before_create :geocode, if: ->(obj){ obj.name.present? and obj.latitude.nil? }  
 

@@ -25,6 +25,17 @@ class Api::CitiesController < Api::BaseController
     @city.delete
   end
 
+  def spotfixes
+    @city = City.find(params[:id])
+    @spotfixes = @city.spotfixes
+  end
+
+  def count
+    @city = City.find(params[:id])
+    @spotfix_count = @city.spotfixes.count
+    @attendee_count = @city.attendees.attended.count
+  end
+  
   private
   def city_params
     params.permit(:name, :latitude, :longitude)

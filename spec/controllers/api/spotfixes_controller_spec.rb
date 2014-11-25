@@ -110,4 +110,20 @@ describe Api::SpotfixesController do
     end
   end
 
+  describe "GET spotfix count" do
+    let!(:city) { create(:city) }
+    let!(:spotfix_1) { create(:spotfix, { city_id: city.id }) }
+    let!(:spotfix_2) { create(:spotfix, { city_id: city.id }) }
+    let!(:spotfix_3) { create(:spotfix, { city_id: city.id + 1 }) }
+    let(:spotfix_count) { json_get :count }
+
+    it "should return count of all spotfixes in India" do
+      expect(spotfix_count.body.spotfixes).to eq(3)
+    end
+
+    it "should return 200 response code" do
+      expect(spotfix_count.status).to eq(200)
+    end
+  end
+
 end

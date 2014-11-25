@@ -1,9 +1,9 @@
-# List Spotfixes
-**Endpoint** : /spotfixes
+# Spotfixes in a City
+**Endpoint** : /users/<:user_id>/spotfixes
 
 **Type**	 : GET
 
-**Sample Request** : ugly-indian.geekd.in/api/spotfixes
+**Sample Request** : ugly-indian.geekd.in/api/users/1/spotfixes
 
 **Sample Response** :
 ```json
@@ -18,8 +18,8 @@
 	"city_id" : 1,
 },
 {
-	"spotfix_id" : 2,
-	"name" : 'Fixie #31257',
+	"spotfix_id" : 4,
+	"name" : 'Fixie #31258',
 	"description" : "sample description",
 	"fix_date" : "2014-10-19 06:00:00",
 	"latitude" : 12.9215,

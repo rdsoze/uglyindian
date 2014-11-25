@@ -49,6 +49,7 @@ group :development, :test do
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm'
   gem 'pry'
+  gem "rails-erd"
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

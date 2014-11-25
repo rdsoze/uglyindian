@@ -61,4 +61,60 @@ describe Api::CitiesController do
     end
   end
 
+  describe "GET index" do
+    let!(:users) { create_list(:user, 5) }
+    let(:index) { json_get :index }
+    
+    it "should list all cities" do
+      expect(index.body.count).to eq(5) 
+    end
+
+    it "should return 200 response code" do
+      expect(index.status).to eq(200)
+    end
+  end
+
+  describe "GET spotfixes" do
+    let!(:city1) { create(:city) }
+    let!(:city2) { create(:city) }
+    let!(:spotfixes1) { create_list(:spotfix, 5, { city_id: city1.id }) }
+    let!(:spotfixes2) { create_list(:spotfix, 5, { city_id: city2.id }) }
+    let(:city1_spotfixes) { json_get :spotfixes, id: city1.id }
+
+    it "should return all spotfixes in a city" do
+      expect(city1_spotfixes.body.count).to eq(5)
+    end
+
+    it "should return 200 response code" do
+      expect(city1_spotfixes.status).to eq(200)
+    end
+  end
+
+  describe "GET count" do
+    let!(:city) { create(:city) }
+    let!(:spotfix_1) { create(:spotfix, { city_id: city.id }) }
+    let!(:spotfix_2) { create(:spotfix, { city_id: city.id }) }
+    let!(:spotfix_3) { create(:spotfix, { city_id: city.id + 1 }) }
+    let!(:guests_1) { create_list(:attendee, 2, :attended, { spotfix_id: spotfix_1.id })}
+    let!(:guests_2) { create_list(:attendee, 3, :attended, { spotfix_id: spotfix_2.id })}
+    let!(:guests_3) { create_list(:attendee, 4, :attended, { spotfix_id: spotfix_3.id })}
+    let(:count) { json_get :count, { id: city.id }}
+
+    it "should return details of city and counts" do
+      expect(count.body.keys).to eq(['id', 'name', 'count'])
+    end
+
+    it "should return count of spotfixes in a particular city" do
+      expect(count.body[:count].spotfixes).to eq(2)
+    end
+
+    it "should return count of attendees in a particular city" do
+      expect(count.body[:count].attendees).to eq(5)
+    end
+
+    it "should return 200 response code" do
+      expect(count.status).to eq(200)
+    end
+  end
+
 end
